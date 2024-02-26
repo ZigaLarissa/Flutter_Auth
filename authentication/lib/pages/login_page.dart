@@ -4,7 +4,11 @@ import "package:flutter/material.dart";
 import "/components/my_textfield.dart";
 
 class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+  LoginPage({super.key});
+
+  // text editing controllers
+  final usernameController = TextEditingController();
+  final passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -33,11 +37,19 @@ class LoginPage extends StatelessWidget {
                 // username textfield
                 SizedBox(height: 20),
 
-                MyTextField(),
+                MyTextField(
+                  controller: usernameController,
+                  hintText: "Username",
+                  obscureText: false,
+                ),
 
                 SizedBox(height: 10),
 
-                MyTextField(),
+                MyTextField(
+                  controller: passwordController,
+                  hintText: "Password",
+                  obscureText: true,
+                ),
 
                 // password textfield
 
